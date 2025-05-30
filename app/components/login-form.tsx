@@ -22,7 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -106,7 +106,7 @@ export function LoginForm({
 			} else {
 				setSignupError(data.error || "Failed to create user");
 			}
-		} catch (_error) {
+		} catch {
 			setSignupError("Network error occurred");
 		}
 	};

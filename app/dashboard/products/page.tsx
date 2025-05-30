@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { Product, StockEntry } from "@prisma/client";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
@@ -47,7 +47,7 @@ export default function ProductsPage() {
 				if (!res.ok) throw new Error("Eroare la încărcarea produselor");
 				const data: Product[] = await res.json();
 				setProducts(data);
-			} catch (_error) {
+			} catch {
 				setError(error || "Eroare necunoscută");
 			} finally {
 				setLoading(false);
@@ -64,7 +64,7 @@ export default function ProductsPage() {
 				if (!res.ok) throw new Error("Eroare la încărcarea produselor");
 				const data: StockEntry[] = await res.json();
 				setStock(data);
-			} catch (_error) {
+			} catch {
 				setError(error || "Eroare necunoscută");
 			} finally {
 				setLoading(false);
@@ -85,7 +85,7 @@ export default function ProductsPage() {
 				}
 				const data = await response.json();
 				setCategories(data);
-			} catch (error) {
+			} catch {
 				console.error("Error fetching categories:", error);
 			}
 		};
@@ -125,7 +125,7 @@ export default function ProductsPage() {
 			setProducts((prev) => [...prev, data]);
 			resetForm();
 			setAddProduct(false);
-		} catch (error) {
+		} catch {
 			console.error("Error adding product:", error);
 		}
 	};

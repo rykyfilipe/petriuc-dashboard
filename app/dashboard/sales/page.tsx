@@ -24,7 +24,7 @@ export default function Sales() {
 				const data = await res.json();
 				setOrders(data);
 				setLoading(false);
-			} catch (_error) {
+			} catch {
 				setError(error);
 				console.error("Eroare la încărcare comenzi", error);
 			}

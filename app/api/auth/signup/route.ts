@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
 		let body;
 		try {
 			body = await req.json();
-		} catch (_e) {
+		} catch {
 			return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
 		}
 
@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 			},
 		});
 
-		const { password: _, ...userWithoutPassword } = newUser;
+		const { ...userWithoutPassword } = newUser;
 
 		return NextResponse.json(
 			{
