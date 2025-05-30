@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SessionProviderWrapper from "./SessionProviderWrapper";
-import { useEffect } from "react";
-import { registerServiceWorker } from "./register-sw";
+
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -26,9 +25,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	useEffect(() => {
-		registerServiceWorker();
-	}, []);
+	
 	return (
 		<html lang='en'>
 			<head>
