@@ -107,7 +107,8 @@ export default function DashboardPage() {
 							Dashboard
 						</h1>
 						<p className='text-sm text-gray-500 mt-1 hidden sm:block'>
-							Welcome back! Here's what's happening with your business.
+							Welcome back! Here&apos;s what&apos;s happening with your
+							business.
 						</p>
 					</div>
 					<div className='flex gap-2 sm:gap-4'>
