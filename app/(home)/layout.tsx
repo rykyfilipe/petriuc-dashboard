@@ -4,7 +4,7 @@
 import { useEffect } from "react";
 import { registerServiceWorker } from "../register-sw";
 
-export default function layout() {
+export default function Layout() {
 	useEffect(() => {
 		registerServiceWorker();
 	}, []);
