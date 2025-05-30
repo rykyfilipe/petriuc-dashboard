@@ -1,6 +1,6 @@
 {
-	"name": "Numele aplicației tale",
-	"short_name": "App",
+	"name": "Petriuc-Dashboard",
+	"short_name": "PDAS",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#ffffff",

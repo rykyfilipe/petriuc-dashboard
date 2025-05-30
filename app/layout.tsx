@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Titlu",
 	description: "Descriere",
-	manifest: "public/manifest.json",
+	manifest: "../public/manifest.json",
 };
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<head>
-				<link rel='manifest' href='public/manifest.json' />
+				<link rel='manifest' href='../public/manifest.json' />
 				<meta name='theme-color' content='#000000' />
 				<meta name='mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-capable' content='yes' />

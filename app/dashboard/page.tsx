@@ -100,7 +100,6 @@ export default function DashboardPage() {
 	return (
 		<div className='min-h-screen bg-gradient-to-br from-gray-50 to-white'>
 			<div className='w-full h-full p-4 sm:p-6 space-y-4 sm:space-y-6 max-w-7xl mx-auto'>
-				{/* Header */}
 				<div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4'>
 					<div>
 						<h1 className='text-2xl sm:text-3xl font-bold text-gray-900'>
