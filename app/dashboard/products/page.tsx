@@ -15,15 +15,15 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, Filter, PlusCircle } from "lucide-react";
-import { POST } from "@/app/api/products/route";
+// import { POST } from "@/app/api/products/route";
 
 export default function ProductsPage() {
-	const { data: session } = useSession();
+	// const { data: session } = useSession();
 	const [products, setProducts] = useState<Product[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
@@ -47,8 +47,8 @@ export default function ProductsPage() {
 				if (!res.ok) throw new Error("Eroare la încărcarea produselor");
 				const data: Product[] = await res.json();
 				setProducts(data);
-			} catch (err: any) {
-				setError(err.message || "Eroare necunoscută");
+			} catch (_error) {
+				setError(error || "Eroare necunoscută");
 			} finally {
 				setLoading(false);
 			}
@@ -64,8 +64,8 @@ export default function ProductsPage() {
 				if (!res.ok) throw new Error("Eroare la încărcarea produselor");
 				const data: StockEntry[] = await res.json();
 				setStock(data);
-			} catch (err: any) {
-				setError(err.message || "Eroare necunoscută");
+			} catch (_error) {
+				setError(error || "Eroare necunoscută");
 			} finally {
 				setLoading(false);
 			}

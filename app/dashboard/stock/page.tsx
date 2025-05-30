@@ -42,8 +42,10 @@ export default function Stock() {
 			</div>
 		);
 	}
-	if (error)
+	if (error) {
+		setError(error);
 		return <div className='text-red-500 text-center p-4'>Eroare: {error}</div>;
+	}
 	return (
 		<div className='container mx-auto px-4 py-8'>
 			<div className='flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4'>

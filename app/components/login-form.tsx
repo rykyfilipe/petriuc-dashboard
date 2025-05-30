@@ -15,7 +15,6 @@ import {
 	SelectContent,
 	SelectGroup,
 	SelectItem,
-	SelectLabel,
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
@@ -31,7 +30,7 @@ export function LoginForm({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<"div">) {
-	const { data: session } = useSession();
+	// const { data: session } = useSession();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -107,7 +106,7 @@ export function LoginForm({
 			} else {
 				setSignupError(data.error || "Failed to create user");
 			}
-		} catch (error) {
+		} catch (_error) {
 			setSignupError("Network error occurred");
 		}
 	};
@@ -173,8 +172,7 @@ export function LoginForm({
 											value={role}
 											onValueChange={(value: "ADMIN" | "AGENT") =>
 												setRole(value)
-											}
-										>
+											}>
 											<SelectTrigger className='w-full'>
 												<SelectValue placeholder='Select role' />
 											</SelectTrigger>

@@ -7,7 +7,6 @@ import {
 	NotebookIcon,
 	WarehouseIcon,
 	Package,
-	User,
 	Users,
 } from "lucide-react";
 

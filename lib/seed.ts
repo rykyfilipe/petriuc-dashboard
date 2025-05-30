@@ -11,7 +11,7 @@ async function main() {
 	await prisma.stockEntry.deleteMany();
 	await prisma.product.deleteMany();
 
-	const products = await prisma.product.createMany({
+	await prisma.product.createMany({
 		data: [
 			{
 				id: "69c4e28d-ae6b-4e56-9b7e-48e8c6099924",
@@ -37,7 +37,6 @@ async function main() {
 		],
 	});
 
-	// 🧱 Adăugăm intrări în stoc
 	await prisma.stockEntry.createMany({
 		data: [
 			{
