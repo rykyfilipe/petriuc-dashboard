@@ -18,7 +18,7 @@ export default function LandingPage() {
 		} else {
 			router.replace("/login");
 		}
-	}, [click]);
+	}, [click, router, session, status]);
 
 	return (
 		<div className='flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6'>
