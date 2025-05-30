@@ -3,19 +3,68 @@
 	"short_name": "PDAS",
 	"start_url": "/",
 	"display": "standalone",
+	"orientation": "portrait",
 	"background_color": "#ffffff",
+	"theme_color": "#000000",
 	"description": "Descriere aplicație",
+	"scope": "/",
+	"lang": "en",
+	"dir": "ltr",
 	"icons": [
 		{
 			"src": "/icons/logo.png",
+			"sizes": "72x72",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
+			"sizes": "128x128",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
+			"sizes": "144x144",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
+			"sizes": "152x152",
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
 			"sizes": "192x192",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "maskable any"
+		},
+		{
+			"src": "/icons/logo.png",
+			"sizes": "384x384",
+			"type": "image/png",
+			"purpose": "maskable any"
 		},
 		{
 			"src": "/icons/logo.png",
 			"sizes": "512x512",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "maskable any"
 		}
 	],
-	"theme_color": "#000000"
+	"screenshots": [
+		{
+			"src": "/icons/logo.png",
+			"sizes": "1280x720",
+			"type": "image/png"
+		}
+	]
 }

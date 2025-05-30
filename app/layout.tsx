@@ -1,11 +1,11 @@
 /** @format */
-
-// app/layout.tsx
+"use client";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SessionProviderWrapper from "./SessionProviderWrapper";
-
+import { useEffect } from "react";
+import { registerServiceWorker } from "./register-sw";
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Titlu",
 	description: "Descriere",
-	manifest: "../public/manifest.json",
+	manifest: "/manifest.json", // Fixed path - remove ../public/
 };
 
 export default function RootLayout({
@@ -27,14 +27,31 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	useEffect(() => {
+		registerServiceWorker();
+	}, []);
 	return (
 		<html lang='en'>
 			<head>
-				<link rel='manifest' href='../public/manifest.json' />
+				<link rel='manifest' href='/manifest.json' />
 				<meta name='theme-color' content='#000000' />
 				<meta name='mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-capable' content='yes' />
-				<link rel='apple-touch-icon' href='/icons/icon-192x192.png' />
+				<meta name='apple-mobile-web-app-status-bar-style' content='black' />
+				<meta name='apple-mobile-web-app-title' content='PDAS' />
+				<link rel='apple-touch-icon' href='/icons/logo.png' />
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='192x192'
+					href='/icons/logo.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='512x512'
+					href='/icons/logo.png'
+				/>
 			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
